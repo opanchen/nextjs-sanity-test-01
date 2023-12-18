@@ -9,7 +9,6 @@ const config = defineConfig({
   apiVersion: "2023-12-16", //env
 
   title: "Next Sanity Test-01",
-
   basePath: "/admin",
 
   plugins: [deskTool()],

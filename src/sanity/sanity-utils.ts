@@ -35,7 +35,7 @@ export async function getProject(slug: string): Promise<Project> {
 }
 
 export async function getPages(): Promise<Page[]> {
-  return createClient(clientConfig).fetch(
+  const res = createClient(clientConfig).fetch(
     groq`*[_type == "page"]{
       _id,
       _createedAt,
@@ -43,6 +43,7 @@ export async function getPages(): Promise<Page[]> {
       "slug": slug.current    
     }`
   );
+  return res;
 }
 
 export async function getPage(slug: string): Promise<Page> {
